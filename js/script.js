@@ -52,6 +52,6 @@ function eval(){
 }
 
 document.querySelector("#verb").textContent = verbs[randomNum].Kanji;
-document.querySelector("#english").textContent = books[randomNum].English;
+document.querySelector("#english").textContent = verbs[randomNum].English;
 document.querySelector("#button").addEventListener("click", () => eval());
 document.addEventListener("submit", () => eval());

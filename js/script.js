@@ -33,14 +33,14 @@ let randomNum = Math.floor(Math.random() * verbs.length);
 
 function eval(){
   event.preventDefault();
-  if(document.querySelector("#input").value === verbs[randomNum].Hiragana || document.querySelector("#input").value === books[randomNum].Hiragana + " ") {
+  if(document.querySelector("#input").value === verbs[randomNum].Hiragana || document.querySelector("#input").value === verbs[randomNum].Hiragana + " ") {
     document.querySelector("#verb").textContent = "Correct!";
     document.querySelector("#verb").classList.add("correct");
-    document.querySelector("#romaji").textContent = "";
+    document.querySelector("#input").textContent = "";
   } else {
     document.querySelector("#verb").textContent = "Incorrect!";
     document.querySelector("#verb").classList.add("incorrect");
-    document.querySelector("#romaji").textContent = "";
+    document.querySelector("#input").textContent = "";
   }
   setTimeout(function(){
   randomNum = Math.floor(Math.random() * 7);;

@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+  font-family: 'McLaren', cursive;
+}
+
+#page{
+  margin-top: 25vh;
+  margin-bottom: 25vh%;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+form {
+  display: inline-block;
+}
+
+button, input {
+  font-family: 'McLaren', cursive;
+  padding: 1em;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #779EC6;
+}
+
+.correct {
+  color: green
+}
+.incorrect {
+  color: red
+}

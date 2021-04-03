@@ -1,57 +1,70 @@
-const verbs = [
-  {Kanji:"行く",Hiragana:"いく",English:"go",Alternate:null},
-  {Kanji:"話す",Hiragana:"はなす",English:"speak",Alternate:null},
-  {Kanji:"取る",Hiragana:"とる",English:"take",Alternate:null},
-  {Kanji:"持つ",Hiragana:"もつ",English:"have",Alternate:null},
-  {Kanji:"分かる",Hiragana:"わかる",English:"understand",Alternate:null},
-  {Kanji:"教える",Hiragana:"おしえる",English:"teach",Alternate:null},
-  {Kanji:"出る",Hiragana:"でる",English:"leave",Alternate:null},
-  {Kanji:"寝る",Hiragana:"ねる",English:"sleep",Alternate:null},
-  {Kanji:"着る",Hiragana:"きる",English:"wear",Alternate:null},
-  {Kanji:"遊ぶ",Hiragana:"あそぶ",English:"play",Alternate:null},
-  {Kanji:"泳ぐ",Hiragana:"およぐ",English:"swim",Alternate:null},
-  {Kanji:"待つ",Hiragana:"まつ",English:"wait",Alternate:null},
-  {Kanji:"買う",Hiragana:"かう",English:"buy",Alternate:null},
-  {Kanji:"する",Hiragana:"する",English:"do",Alternate:null},
-  {Kanji:"来る",Hiragana:"くる",English:"come",Alternate:null},
-  {Kanji:"会う",Hiragana:"あう",English:"meet",Alternate:null},
-  {Kanji:"言う",Hiragana:"いう",English:"say",Alternate:null},
-  {Kanji:"聞く",Hiragana:"きく",English:"hear",Alternate:"ask"},
-  {Kanji:"見る",Hiragana:"みる",English:"see",Alternate:null},
-  {Kanji:"考える",Hiragana:"かんがえる",English:"think",Alternate:null},
-  {Kanji:"思う",Hiragana:"おもう",English:"feel",Alternate:"think"},
-  {Kanji:"食べる",Hiragana:"たべる",English:"eat",Alternate:null},
-  {Kanji:"飲む",Hiragana:"のむ",English:"drink",Alternate:null},
-  {Kanji:"信じる",Hiragana:"しんじる",English:"believe",Alternate:null},
-  {Kanji:"喜ぶ",Hiragana:"よろこぶ",English:"joy",Alternate:null},
-  {Kanji:"書く",Hiragana:"かく",English:"write",Alternate:null},
-  {Kanji:"飛ぶ",Hiragana:"とぶ",English:"fly",Alternate:null},
-  {Kanji:"洗う",Hiragana:"あらう",English:"wash",Alternate:null}
+const kanjiList = [
+  {Kanji:"一",Hiragana:"いち",English:"1"},
+  {Kanji:"一つ",Hiragana:"ひとつ",English:"1"},
+  {Kanji:"一こ",Hiragana:"いっこ",English:"1"},
+  {Kanji:"二",Hiragana:"に",English:"2"},
+  {Kanji:"二つ",Hiragana:"ふたつ",English:"2"},
+  {Kanji:"三",Hiragana:"さん",English:"3"},
+  {Kanji:"三つ",Hiragana:"みっつ",English:"3"},
+  {Kanji:"四",Hiragana:"よん",English:"4"},
+  {Kanji:"四つ",Hiragana:"よっつ",English:"4"},
+  {Kanji:"五",Hiragana:"ご",English:"5"},
+  {Kanji:"五つ",Hiragana:"いつつ",English:"5"},
+  {Kanji:"六",Hiragana:"ろく",English:"6"},
+  {Kanji:"六つ",Hiragana:"むっつ",English:"6"},
+  {Kanji:"七",Hiragana:"なな",English:"7"},
+  {Kanji:"七つ",Hiragana:"ななつ",English:"7"},
+  {Kanji:"八",Hiragana:"はち",English:"8"},
+  {Kanji:"八つ",Hiragana:"やっつ",English:"8"},
+  {Kanji:"九",Hiragana:"きゅう",English:"9"},
+  {Kanji:"九つ",Hiragana:"ここのつ",English:"9"},
+  {Kanji:"十",Hiragana:"じゅう",English:"10"},
+  {Kanji:"十七",Hiragana:"じゅうなな",English:"17"},
+  {Kanji:"月",Hiragana:"つき",English:"moon"},
+  {Kanji:"二月",Hiragana:"にがつ",English:"february"},
+  {Kanji:"月曜日",Hiragana:"げつようび",English:"monday"},
+  {Kanji:"火",Hiragana:"ひ",English:"fire"},
+  {Kanji:"火曜日",Hiragana:"かようび",English:"tuesday"},
+  {Kanji:"水",Hiragana:"みず",English:"water"},
+  {Kanji:"水曜日",Hiragana:"すいようび",English:"wednesday"},
+  {Kanji:"木",Hiragana:"き",English:"wood"},
+  {Kanji:"木曜日",Hiragana:"もくようび",English:"thursday"},
+  {Kanji:"金",Hiragana:"きん",English:"gold"},
+  {Kanji:"お金",Hiragana:"おかね",English:"money"},
+  {Kanji:"金曜日",Hiragana:"きんようび",English:"friday"},
+  {Kanji:"土",Hiragana:"つち",English:"dirt"},
+  {Kanji:"土曜日",Hiragana:"どようび",English:"saturday"},
+  {Kanji:"日",Hiragana:"ひ",English:"day"},
+  {Kanji:"日曜日",Hiragana:"にちようび",English:"Sunday"},
+  {Kanji:"二日",Hiragana:"ふつか",English:"The second"},
+  {Kanji:"二十日",Hiragana:"はつか",English:"The 20th"}
   ];
 
-let randomNum = Math.floor(Math.random() * verbs.length);
+let randomNum = Math.floor(Math.random() * kanjiList.length);
 
 function eval(){
   event.preventDefault();
-  if(document.querySelector("#input").value === verbs[randomNum].Hiragana || document.querySelector("#input").value === verbs[randomNum].Hiragana + " ") {
-    document.querySelector("#verb").textContent = "Correct!";
-    document.querySelector("#verb").classList.add("correct");
+  if(document.querySelector("#input").value === kanjiList[randomNum].Hiragana || document.querySelector("#input").value === kanjiList[randomNum].Hiragana + " ") {
+    document.querySelector("#kanji").textContent = "Correct!";
+    document.querySelector("#kanji").classList.add("correct");
     document.querySelector("#input").textContent = "";
   } else {
-    document.querySelector("#verb").textContent = "Incorrect!";
-    document.querySelector("#verb").classList.add("incorrect");
+    document.querySelector("#kanji").textContent = "Incorrect!";
+    document.querySelector("#kanji").classList.add("incorrect");
     document.querySelector("#input").textContent = "";
+    document.querySelector("#english").style.display = "none";
   }
   setTimeout(function(){
   randomNum = Math.floor(Math.random() * 7);;
-  document.querySelector("#verb").textContent = verbs[randomNum].Kanji;
-  document.querySelector("#english").textContent = verbs[randomNum].English;
-  document.querySelector("#verb").classList.remove("correct", "incorrect");
+  document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
+  document.querySelector("#english").textContent = kanjiList[randomNum].English;
+  document.querySelector("#kanji").classList.remove("correct", "incorrect");
   document.querySelector("#input").value = "";
+  document.querySelector("#english").style.display = "block";
   }, 1000);
 }
 
-document.querySelector("#verb").textContent = verbs[randomNum].Kanji;
-document.querySelector("#english").textContent = verbs[randomNum].English;
+document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
+document.querySelector("#english").textContent = kanjiList[randomNum].English;
 document.querySelector("#button").addEventListener("click", () => eval());
 document.addEventListener("submit", () => eval());

@@ -20,6 +20,7 @@ h2 {
 h3 {
   font-size: 2em;
   margin-top: 0px;
+  display: block;
 }
 
 form {
@@ -31,6 +32,7 @@ button, input {
   padding: 1em;
   border: 2px solid black;
   border-radius: 5px;
+  margin-top: 60px;
 }
 
 button {

@@ -36,7 +36,7 @@ const kanjiList = [
   {Kanji:"土曜日",Hiragana:"どようび",English:"saturday"},
   {Kanji:"日",Hiragana:"ひ",English:"day"},
   {Kanji:"日曜日",Hiragana:"にちようび",English:"Sunday"},
-  {Kanji:"二日",Hiragana:"ふつか",English:"The second"},
+  {Kanji:"二日",Hiragana:"ふつか",English:"The 2nd"},
   {Kanji:"二十日",Hiragana:"はつか",English:"The 20th"}
   ];
 
@@ -57,7 +57,7 @@ function eval(){
   if(document.querySelector("#group1").checked === true){
     randomNum = Math.floor(Math.random() * 20);
   } else if(document.querySelector("#group2").checked === true){
-    randomNum = Math.floor(Math.random() * 40);
+    randomNum = Math.floor(Math.random() * 39);
   }
   document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
   document.querySelector("#english").textContent = kanjiList[randomNum].English;

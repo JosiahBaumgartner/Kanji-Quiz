@@ -33,6 +33,11 @@ button, input {
   border: 2px solid black;
   border-radius: 5px;
   margin-top: 20px;
+  border-color: grey;
+}
+
+input:focus {
+  border-color: rgb(26,115,232);
 }
 
 .checkbox {
@@ -40,7 +45,9 @@ button, input {
 }
 
 button {
-  background-color: #779EC6;
+  background-color: rgb(26,115,232);
+  color: white;
+  border-color: rgb(26,115,232);
 }
 
 .correct {

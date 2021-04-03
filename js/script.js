@@ -40,7 +40,7 @@ const kanjiList = [
   {Kanji:"二十日",Hiragana:"はつか",English:"The 20th"}
   ];
 
-let randomNum = Math.floor(Math.random() * kanjiList.length);
+let randomNum = Math.floor(Math.random() * 20);
 
 function eval(){
   event.preventDefault();
@@ -52,15 +52,17 @@ function eval(){
     document.querySelector("#kanji").textContent = "Incorrect!";
     document.querySelector("#kanji").classList.add("incorrect");
     document.querySelector("#input").textContent = "";
-    document.querySelector("#english").style.display = "none";
   }
   setTimeout(function(){
-  randomNum = Math.floor(Math.random() * 7);;
+  if(document.querySelector("#group1").checked === true){
+    randomNum = Math.floor(Math.random() * 20);
+  } else if(document.querySelector("#group2").checked === true){
+    randomNum = Math.floor(Math.random() * 40);
+  }
   document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
   document.querySelector("#english").textContent = kanjiList[randomNum].English;
   document.querySelector("#kanji").classList.remove("correct", "incorrect");
   document.querySelector("#input").value = "";
-  document.querySelector("#english").style.display = "block";
   }, 1000);
 }
 

@@ -37,27 +37,49 @@ const kanjiList = [
   {Kanji:"日",Hiragana:"ひ",English:"day"},
   {Kanji:"日曜日",Hiragana:"にちようび",English:"Sunday"},
   {Kanji:"二日",Hiragana:"ふつか",English:"The 2nd"},
-  {Kanji:"二十日",Hiragana:"はつか",English:"The 20th"}
+  {Kanji:"二十日",Hiragana:"はつか",English:"The 20th"},
+  {Kanji:"人",Hiragana:"ひと",English:"people"},
+  {Kanji:"イスラエル人",Hiragana:"いすらえるじん",English:"israelites"},
+  {Kanji:"一人",Hiragana:"ひとり",English:"one person"},
+  {Kanji:"二人",Hiragana:"ふたり",English:"two people"},
+  {Kanji:"三人",Hiragana:"さんにん",English:"three people"},
+  {Kanji:"百",Hiragana:"ひゃく",English:"hundred"},
+  {Kanji:"千",Hiragana:"せん",English:"thousand"},
+  {Kanji:"万",Hiragana:"まん",English:"ten thousand"},
+  {Kanji:"山",Hiragana:"やま",English:"mountain"},
+  {Kanji:"ふじ山",Hiragana:"ふじさん",English:"mt.fuji"},
+  {Kanji:"火山",Hiragana:"かざん",English:"Volcano"},
+  {Kanji:"川",Hiragana:"かわ",English:"river"},
+  {Kanji:"石",Hiragana:"いし",English:"rock"},
+  {Kanji:"宝石",Hiragana:"ほうせき",English:"gems"},
+  {Kanji:"空",Hiragana:"そら",English:"sky"},
+  {Kanji:"空気",Hiragana:"くうき",English:"air"},
+  {Kanji:"夕方",Hiragana:"ゆうがた",English:"afternoon"},
+  {Kanji:"夕日",Hiragana:"ゆうひ",English:"sunset"}
   ];
 
-let randomNum = Math.floor(Math.random() * 20);
+let randomNum = Math.floor(Math.random() * 19);
 
 function eval(){
   event.preventDefault();
   if(document.querySelector("#input").value === kanjiList[randomNum].Hiragana || document.querySelector("#input").value === kanjiList[randomNum].Hiragana + " ") {
-    document.querySelector("#kanji").textContent = "Correct!";
+    document.querySelector("#kanji").textContent = kanjiList[randomNum].Hiragana;
     document.querySelector("#kanji").classList.add("correct");
     document.querySelector("#input").textContent = "";
   } else {
-    document.querySelector("#kanji").textContent = "Incorrect!";
+    document.querySelector("#kanji").textContent = kanjiList[randomNum].Hiragana;
     document.querySelector("#kanji").classList.add("incorrect");
     document.querySelector("#input").textContent = "";
   }
   setTimeout(function(){
   if(document.querySelector("#group1").checked === true){
-    randomNum = Math.floor(Math.random() * 20);
+    randomNum = Math.floor(Math.random() * 19);
   } else if(document.querySelector("#group2").checked === true){
     randomNum = Math.floor(Math.random() * 39);
+  } else if(document.querySelector("#group3").checked === true){
+    if(randomNum == 46){console.log(randomNum)};
+  } else if(document.querySelector("#group4").checked === true){
+    randomNum = Math.floor(Math.random() * 57);
   }
   document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
   document.querySelector("#english").textContent = kanjiList[randomNum].English;

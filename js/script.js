@@ -82,10 +82,18 @@ function eval(){
     randomNum = Math.floor(Math.random() * 57);
   }
   document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
-  document.querySelector("#english").textContent = kanjiList[randomNum].English;
+
+  // This janky code capitalizes the first letter of the string if its length is longer than 1 (The length limit is to avoid issues with numbers? I don't know lol)
+  if(kanjiList[randomNum].English.length > 1){
+    document.querySelector("#english").textContent = kanjiList[randomNum].English;
+    document.querySelector("#english").prepend(document.querySelector("#english").textContent[0].toUpperCase());
+    document.querySelector("#english").textContent = document.querySelector("#english").textContent.slice(0,1) + document.querySelector("#english").textContent.slice(2);
+  } else
+  {document.querySelector("#english").textContent = kanjiList[randomNum].English;
+  }
   document.querySelector("#kanji").classList.remove("correct", "incorrect");
   document.querySelector("#input").value = "";
-  }, 1000);
+  }, 3000);
 }
 
 document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;

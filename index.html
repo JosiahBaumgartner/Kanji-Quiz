@@ -20,22 +20,16 @@
   <form id="form">
     <input type="text" placeholder="In Hiragana" id="input" autocomplete="off" autofocus></input>
     <button type="button" id="button">Submit</button>
-<div class="checkbox">
-    <input type="radio" id="group1" name="kanjiGroup" value="group1" checked="checked">
-    <label for="group1"> Kanji 1-20 </label>
-  </div>
-  <div class="checkbox">
-    <input type="radio" id="group2" name="kanjiGroup" value="group2" >
-    <label for="group2"> Kanji 1-40 </label><br>
-  </div>
-  <div class="checkbox">
-    <input type="radio" id="group3" name="kanjiGroup" value="group3" >
-    <label for="group3"> Kanji 1-48 </label><br>
-  </div>
-  <div class="checkbox">
-    <input type="radio" id="group4" name="kanjiGroup" value="group4" >
-    <label for="group4"> Kanji 1-58 </label><br>
-  </div>
+    <div class="checkbox">
+      <label for="groupDropdown">Choose a group:</label>
+      <select name="groupDropdown" id="groupDropdown">
+        <optgroup label="Page 1">
+          <option value="group1">1-20</option>
+          <option value="group2">1-40</option>
+          <option value="group3">1-48</option>
+          <option value="group4">1-58</option>
+      </select>
+    </div>
   </form>
   </div>
   <script src="js/script.js"></script>

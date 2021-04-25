@@ -72,13 +72,13 @@ function eval(){
     document.querySelector("#input").textContent = "";
   }
   setTimeout(function(){
-  if(document.querySelector("#group1").checked === true){
+  if(document.querySelector("#groupDropdown").value === "group1"){
     randomNum = Math.floor(Math.random() * 19);
-  } else if(document.querySelector("#group2").checked === true){
+  } else if(document.querySelector("#groupDropdown").value === "group2"){
     randomNum = Math.floor(Math.random() * 39);
-  } else if(document.querySelector("#group3").checked === true){
+  } else if(document.querySelector("#groupDropdown").value === "group3"){
     if(randomNum == 46){console.log(randomNum)};
-  } else if(document.querySelector("#group4").checked === true){
+  } else if(document.querySelector("#groupDropdown").value === "group4"){
     randomNum = Math.floor(Math.random() * 57);
   }
   document.querySelector("#kanji").textContent = kanjiList[randomNum].Kanji;
